@@ -12,21 +12,23 @@
         </tr>
     </thead>
     <tbody>
+        <?php foreach($data as $pro): ?>
         <tr>
-            <td>1</td>
+            <td><?= $pro["id"] ?></td>
             <td>
-                <img src="../assets/uploads/products/san-pham_ao-blazer-01.webp" alt="" width="50">
+                <img src="<?= BASE_ASSETS_UPLOADS . $pro['img']?>" alt="" width="50">
             </td>
-            <td>Sản phẩm 1</td>
-            <td>Danh mục 1</td>
-            <td>Mô tả 1</td>
-            <td>150.000</td>
-            <td>10</td>
+            <td><?= $pro["name"] ?></td>
+            <td><?= $pro["cat_name"] ?></td>
+            <td><?= $pro["description"] ?></td>
+            <td><?= $pro["price"] ?></td>
+            <td><?= $pro["quantity"] ?></td>
             <td>
                 <button type="button" class="btn btn-primary">Xem</button>
                 <button type="button" class="btn btn-success">Sửa</button>
                 <button type="button" class="btn btn-danger">Xóa</button>
             </td>
         </tr>
+        <?php endforeach; ?>
     </tbody>
 </table>
