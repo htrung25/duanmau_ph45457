@@ -1,7 +1,7 @@
 <?php
 
-define('BASE_URL',          'http://06_t2_web2041.04_web2041.test/');
-define('BASE_URL_ADMIN',          'http://06_t2_web2041.04_web2041.test/?mode=admin');
+define('BASE_URL',          'http://DuAnMau_trungthph45457.test/');
+define('BASE_URL_ADMIN',          'http://DuAnMau_trungthph45457.test/?mode=admin');
 
 define('PATH_ROOT',         __DIR__ . '/../');
 
@@ -24,7 +24,7 @@ define('DB_HOST',     'localhost');
 define('DB_PORT',     '3306');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
-define('DB_NAME',     '06_t2_web2041.04_web2041');
+define('DB_NAME',     'trungthph45457_WEB2041.04');
 define('DB_OPTIONS', [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,

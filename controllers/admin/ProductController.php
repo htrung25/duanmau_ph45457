@@ -62,7 +62,7 @@ class ProductController {
             }
             // Lưu giá trị vào CSDL
             $this->productModel->insert($data);
-        } catch (Exeption $ex) {
+        } catch (Exception $ex) {
             throw new Exception("Thao tác tạo mới không thành công");
         }
         header('Location:' .BASE_URL_ADMIN .'&action=create-product');
