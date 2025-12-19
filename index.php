@@ -22,6 +22,10 @@ spl_autoload_register(function ($class) {
 
 require_once './configs/env.php';
 require_once './configs/helper.php';
+// load middleware helpers
+if (is_readable(__DIR__ . '/configs/middleware.php')) {
+    require_once __DIR__ . '/configs/middleware.php';
+}
 
 // Điều hướng
 $mode = $_GET['mode'] ?? 'client';

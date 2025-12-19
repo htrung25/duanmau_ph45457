@@ -15,36 +15,49 @@
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-xxl bg-light justify-content-center">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link text-uppercase" href="<?= BASE_URL ?>"><b>Home</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-uppercase" href="#"><b>Thống kê</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-uppercase" href="#"><b>Quản lý danh mục</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-uppercase" href="#"><b>Quản lý sản phẩm</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-uppercase" href="#"><b>Quản lý bình luận</b></a>
-            </li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <h1 class="mt-3 mb-3"><?= $title ?? 'Home' ?></h1>
-
+    <div class="container-fluid">
         <div class="row">
-            <?php
-            if (isset($view)) {
-                require_once PATH_VIEW_ADMIN . $view . '.php';
-            }
-            ?>
+            <nav id="sidebar" class="col-md-2 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <h5 class="px-3 mb-3">Admin</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= BASE_URL_ADMIN ?>">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Thống kê</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= BASE_URL_ADMIN . '&action=list-product' ?>">Quản lý sản phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= BASE_URL_ADMIN . '&action=list-category' ?>">Quản lý danh mục</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= BASE_URL_ADMIN . '&action=list-user' ?>">Quản lý tài khoản</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= BASE_URL_ADMIN . '&action=list-comment' ?>">Quản lý bình luận</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-10 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2"><?= $title ?? 'Home' ?></h1>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <?php
+                        if (isset($view)) {
+                            require_once PATH_VIEW_ADMIN . $view . '.php';
+                        }
+                        ?>
+                    </div>
+                </div>
+            </main>
         </div>
     </div>
 
